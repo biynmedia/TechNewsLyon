@@ -14,6 +14,10 @@ define('HEADER_SITE', RACINE_SITE.'/Application/Layout/header.inc.php');
 # Pied de Page du site
 define('FOOTER_SITE', RACINE_SITE.'/Application/Layout/footer.inc.php');
 
+# Sidebar du Site
+define('SIDEBAR_SITE', RACINE_SITE.'/Application/Layout/sidebar.inc.php');
+
+# Chemin vers les vues
 define('VIEW_SITE', RACINE_SITE.'/Application/Views');
 
 # Connexion à la BDD

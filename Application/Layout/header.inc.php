@@ -1,3 +1,24 @@
+<?php 
+    # Importation des Classes
+    use Application\Model\Categorie\CategorieDb;
+    use Application\Model\Tags\TagsDb;
+use Application\Model\Article\ArticleDb;
+
+    # Récupération des Catégories du Site
+    $CategorieDb = new CategorieDb();
+    $categories  = $CategorieDb->fetchAll();
+    
+    # Récupération des Tags du site
+    $TagsDb = new TagsDb();
+    $tags   = $TagsDb->fetchAll();
+    
+    # Récupération des 5 derniers articles de la BDD
+    $ArticleDb  = new ArticleDb();
+    $sidebar    = $ArticleDb->fetchAll(null, 
+        'DATECREATIONARTICLE DESC', 5);
+    
+    print_r($sidebar);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
