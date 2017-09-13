@@ -120,8 +120,39 @@ class Article
     {
         return $this->AuteurObj;
     }    
+    
+    /**
+     * Retourne une Accorche de 170 caractères...
+     */
+    public function getAccroche() {
+        
+        # Supprimer toutes les balises HTML
+        $string = strip_tags($this->CONTENUARTICLE);
+        
+        # Si ma chaine de caractère est supérieur à 170, je poursuis
+        # Sinon c'est inutile
+        if(strlen($string) > 170) {
+            
+            # Je coupe ma chaine à 170.
+            $stringCut = substr($string, 0, 170);
+            
+            # Je m'assure que je ne coupe pas de mot !
+            $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+            
+        }
+        
+        return $string;
+        
+    }
             
 }
+
+
+
+
+
+
+
 
 
 

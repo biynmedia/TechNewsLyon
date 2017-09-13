@@ -34,6 +34,26 @@ class AppController
     public function getParams() {
         return $this->_viewparams;
     }
+    
+    /**
+     * Permet le débuggage des paramètres de la vue.
+     */
+    public function debug() {
+        echo '<pre>';
+            print_r($this->_viewparams);
+        echo '</pre>';
+    }
+    
+    /**
+     * Vérifie l'existance de valeur dans $_GET['action'];
+     */
+    public function getAction() {
+        if(empty($_GET['action'])) {
+            return 'accueil';
+        } 
+        return $_GET['action'];
+    }
+    
 }
 
 

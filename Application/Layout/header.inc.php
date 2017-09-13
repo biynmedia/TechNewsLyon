@@ -16,8 +16,9 @@ use Application\Model\Article\ArticleDb;
     $ArticleDb  = new ArticleDb();
     $sidebar    = $ArticleDb->fetchAll(null, 
         'DATECREATIONARTICLE DESC', 5);
+    $special    = $ArticleDb->fetchAll('SPECIALARTICLE = 1');
     
-    print_r($sidebar);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">

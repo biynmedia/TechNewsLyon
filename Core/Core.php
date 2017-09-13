@@ -2,7 +2,9 @@
 
 namespace Core;
 
-class Core {
+use Core\Controller\AppController;
+
+class Core extends AppController {
     
     public function __construct($params)
     {
@@ -25,13 +27,11 @@ class Core {
             if( method_exists($obj, $action) ) {
                 $obj->$action();
             } else {
-                echo "<h1>Erreur 404 - Page Introuvable</h1>
-                <h3>Aucune vue correspondante.</h3>";
+                $this->render('errors/404',['erreur' => 'Aucune vue correspondante']);
             }
             
         } else {
-            echo "<h1>Erreur 404 - Page Introuvable</h1>
-                <h3>Ce controleur n'existe pas.</h3>";
+            $this->render('errors/404',['erreur' => 'Ce controleur n\'existe pas']);
         }
         
         
