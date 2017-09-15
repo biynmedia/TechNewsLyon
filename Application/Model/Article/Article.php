@@ -3,9 +3,15 @@ namespace Application\Model\Article;
 
 use Application\Model\Categorie\CategorieDb;
 use Application\Model\Auteur\AuteurDb;
+use Application\Model\Traits\Shortcut;
+use Application\Model\Helper;
 
 class Article
 {
+    # Utilisation du Trait Shortcut, à ne pas confondre avec le use
+    # pour le namespace.
+    use Shortcut;
+    
     private $IDARTICLE,
             $IDAUTEUR,
             $IDCATEGORIE,
@@ -144,6 +150,31 @@ class Article
         return $string;
         
     }
+    
+    /**
+     * Génère une URL à partir du Titre de l'Article
+     * @return string URL vers l'Article
+     */
+    public function generateUrl() {
+        
+        # public/article/[:idarticle]-[:slug].html
+        # ou : idarticle = $_GET['idarticle'];
+        # PUBLIC_URL.'article/'.$this->IDARTICLE.'-'.
+        #    $this->generateSlug($this->TITREARTICLE).'.html';
+        
+        return Helper::generateUrl($this->IDARTICLE, $this->TITREARTICLE);
+    }
+    
+    /**
+     * Mise au Format de la Date
+     * @return unknown
+     */
+//     public function getDateCreationArticle()
+//     {
+//         $strRetour=date_format(date_create($this->DATECREATIONARTICLE),"d/m/Y");
+//         return $strRetour;
+//     }
+    
             
 }
 

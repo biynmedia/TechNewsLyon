@@ -13,10 +13,10 @@
 			<ul class="list-news-popular">
 				<?php foreach ($sidebar as $article) : ?>
     				<li>
-    					<a href="#">
+    					<a href="<?= $article->generateUrl(); ?>">
     						<img alt="" src="<?= PUBLIC_URL ?>/images/product/<?= $article->getFEATUREDIMAGEARTICLE(); ?>">
     					</a>
-    					<h3><a href="#"><?= $article->getTITREARTICLE(); ?></a></h3>   
+    					<h3><a href="<?= $article->generateUrl(); ?>"><?= $article->getTITREARTICLE(); ?></a></h3>   
     					<div class="meta-post">
     						<a href="#">
     							<?= $article->getAuteurObj()->getNOMCOMPLET(); ?>
@@ -91,12 +91,12 @@
 		<div class="list-special">
 			<?php foreach ($special as $article) : ?>
     			<article class="news-two-large">
-    				<a href="#">
+    				<a href="<?= $article->generateUrl(); ?>">
     					<img alt="" src="<?= PUBLIC_URL ?>/images/product/<?= $article->getFEATUREDIMAGEARTICLE(); ?>">
     				</a>
     				<h3><a href="#"><?= $article->getTITREARTICLE(); ?></a></h3>
     				<div class="meta-post">
-    					<a href="#">
+    					<a href="<?= $article->generateUrl(); ?>">
     						<?= $article->getAuteurObj()->getNOMCOMPLET(); ?>
     					</a>
     					<em></em>

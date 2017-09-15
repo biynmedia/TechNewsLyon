@@ -20,7 +20,7 @@
     				</div>
     				<div class="spotlight-item-caption">
     					<h2 class="font-heading">
-    						<a href="#">
+    						<a href="<?= $article->generateUrl(); ?>">
     							<?= $article->getTITREARTICLE(); ?>
     						</a>
     					</h2>
@@ -52,9 +52,9 @@
     						</a>
     						<a href="#" class="cate-tag"><?= $article->getCategorieObj()->getLIBELLECATEGORIE(); ?></a>
     					</div>
-    					<h3><a href="#"><?= $article->getTITREARTICLE(); ?></a></h3>
+    					<h3><a href="<?= $article->generateUrl(); ?>"><?= $article->getTITREARTICLE(); ?></a></h3>
     					<div class="meta-post">
-    						<a href="#">
+    						<a href="<?= $article->generateUrl(); ?>">
     							<?= $article->getAuteurObj()->getNOMCOMPLET(); ?>
     						</a>
     						<em></em>

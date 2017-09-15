@@ -1,10 +1,20 @@
 <?php
 namespace Core\Controller;
+use Core\Model\DbFactory;
 
 class AppController
 {
     
     private $_viewparams;
+    
+    /**
+     * Permet d'initialiser la connexion à la BDD pour l'ensemble
+     * des Actions de mes Controllers.
+     */
+    public function __construct() {
+        # Initialisation de ORMFactory à la construction de AppController.
+        DbFactory::ORMFactory();
+    }
     
     /**
      * Permet de générer l'affichage de la vue passée en paramètre.
